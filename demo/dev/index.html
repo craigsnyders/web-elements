@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>OS Elements basic demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+
+    <!-- demo & libs -->
+    <script type="text/javascript" src="../../build/demo_vendor_libs.js"></script>
+    <link rel="stylesheet" href="../../build/demo_vendor_libs.css">
+
+    <!-- osElements -->
+    <link rel="stylesheet" href="../../build/elements.css">
+    <script type="text/javascript" src="../../build/elements.js"></script>
+
+    <style>
+        button,
+        select,
+        html,
+        textarea,
+        input {
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+    </style>
+
+    <style>
+        md-tabs.md-os-theme .md-tab {
+            text-transform: none;
+            font-weight: bold;
+            text-align: left;
+            color: #acacac;
+            border-bottom: 2px solid #acacac;
+        }
+
+        md-tabs.md-os-theme .md-tab.md-active, md-tabs.md-os-theme .md-tab.md-active md-icon, md-tabs.md-os-theme .md-tab.md-focused,
+        md-tabs.md-os-theme .md-tab.md-focused md-icon {
+
+        }
+
+        md-tabs.md-os-theme .md-tab.os-tab-completed {
+            color: #000000;
+            border-bottom-color: #000000;
+        }
+
+        /*md-tabs.md-os-theme .md-tab.md-active {
+            color: #2b97ef;
+            border-bottom-color: #2b97ef;
+        }*/
+
+        .md-os-theme md-pagination-wrapper,  .md-os-theme md-tabs-canvas {
+            height: 50px;
+        }
+
+        .md-os-theme md-tab-item {
+            padding-left: 0;
+            margin-left: 5px;
+        }
+
+        md-tabs.md-os-theme md-ink-bar {
+            color: #2b97ef;
+            background: #2b97ef;
+        }
+
+        section {
+            width: 100vw;
+            height: calc(100vh - 56px);
+        }
+
+        .map {
+            background: url('assets/img/map_bg.png') 0 0/cover;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<app ng-controller="AppController as app">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2 class="md-flex">OS Elements</h2>
+        </div>
+    </md-toolbar>
+
+    <section>
+
+      <button ng-click="app.clicked()">show modal</button>
+
+    </section>
+
+
+    <section class="map" style="display: none;">
+
+            <div style="position: relative;top: 10px; left:10px; width: 100px; height: 70px; background: #fff">
+                Bottom
+
+                <os-popover class="os-popover" os-direction="bottom">
+                    <os-popover-title>Bottom popover</os-popover-title>
+
+                    <os-popover-description>Bottom popover description</os-popover-description>
+                </os-popover>
+            </div>
+
+
+            <div style="position: relative;top: 600px; left:600px; width: 100px; height: 70px; background: #fff">
+                popover #2
+
+                <os-popover class="os-popover" os-direction="bottom">
+                    <os-popover-title>Bottom right</os-popover-title>
+
+                    <os-popover-description>Right popover description</os-popover-description>
+                </os-popover>
+            </div>
+
+
+            <div style="position: relative;top: 700px; left:10px; width: 100px; height: 70px; background: #fff">
+                popover #3
+
+                <os-popover class="os-popover" os-direction="left">
+                    <os-popover-title>Left popover</os-popover-title>
+
+                    <os-popover-description>Left popover description</os-popover-description>
+                </os-popover>
+            </div>
+
+
+            <div style="position: relative;top: 10px; left:800px; width: 100px; height: 70px; background: #fff">
+              popover #3
+
+              <os-popover class="os-popover" os-direction="right">
+                <os-popover-title>Left popover</os-popover-title>
+
+                <os-popover-description>Left popover description</os-popover-description>
+              </os-popover>
+            </div>
+
+    </section>
+
+
+</app>
+
+<script type="text/javascript" src="demo.js"></script>
+</body>
+
+</html>
