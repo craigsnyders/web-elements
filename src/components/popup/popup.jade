@@ -1,10 +1,7 @@
 .transclude-content(ng-transclude)
 
-h1.os-popover-header Jade {{ osPopover.title }}
+md-icon.os-popover-closeIcon(ng-click="osPopover.hide()") clear
 
-p.os-popover-description Jade {{ osPopover.description }}
+h1.os-popover-header {{ osPopover.title }}
 
-.os-popover-actions(layout="row", layout-align="space-between center")
-  div Edit
-  div Move
-  div Delete
+p.os-popover-description {{ osPopover.description }}

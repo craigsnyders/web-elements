@@ -13,6 +13,7 @@ export class OsPopover {
 
   title:string;
   description:string;
+  actions:string;
 
   static TOOLTIP_WINDOW_EDGE_SPACE = 8;
 
@@ -29,11 +30,6 @@ export class OsPopover {
 
     this.parent.on('focus mouseenter touchstart', this.enterHandler.bind(this));
 
-    this.parent.on('blur mouseleave touchend touchcancel', this.leaveHandler.bind(this));
-  }
-
-  private leaveHandler() {
-    this.hide()
   }
 
   private enterHandler() {
@@ -134,9 +130,13 @@ angular
         // content
         ctrl.title = element.find('os-popover-title').text();
         ctrl.description = element.find('os-popover-description').text();
+        ctrl.actions = element.find('os-popover-actions').detach();
 
         // remove transclude content
-        angular.element(element[0].getElementsByClassName('transclude-content')[0]).remove()
+        angular.element(element[0].getElementsByClassName('transclude-content')[0]).remove();
+
+        // translude button without losing bindings
+        angular.element(element[0]).append( ctrl.actions );
       }
     }
   });

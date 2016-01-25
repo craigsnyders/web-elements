@@ -11,6 +11,7 @@ export declare class OsPopover {
     private tipRect;
     title: string;
     description: string;
+    actions: string;
     static TOOLTIP_WINDOW_EDGE_SPACE: number;
     constructor($element: ng.IRootElementService, $transclude: ng.ITranscludeFunction, $mdUtil: any);
     private postLink();
